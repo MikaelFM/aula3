@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv='refresh' content='60'>
-        <title>Aulas</title>
-        <link rel="stylesheet" href="style.css" >
-        <link rel="shortcut icon" href="icon2.png" type="image/x-icon">
-    </head>
-    </style>
-    <body onload="getDia()" class="black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='refresh' content='60'>
+    <title>Aulas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon2.png" type="image/x-icon">
+</head>
+</style>
+
+<body onload="getDia()" class="black">
+
+    <div id="container-imagem" onclick="white()">
         
-            <div id="container-imagem" onclick="white()">
-                     <div id="tudo"><img src="IF.jpg" alt="">
-                <p id="p">Redirecionando para aula de <p2>MATEMÁTICA</p2></p>
-            
-                <div class="container">
-                    <div class="skill">
-                        <div class="percent">
-                            <div class="progress"></div>
-                        </div>
-                        <span class="value">0%</span>
-            
+            <div id="tudo"><img src="IF.jpg" alt="">
+            <p id="p">Redirecionando para aula de 
+                <p2>MATEMÁTICA</p2>
+            </p>
+            <div class="container">
+                <div class="skill">
+                    <div class="percent">
+                        <div class="progress"></div>
                     </div>
+                    <span class="value">0%</span>
                 </div>
-                <div id="dia">
-                    <p id="p2" onload="gato()">
+            </div>
+            <div id="dia">
+                <p id="p2" onload="gato()">
                     SEXTA-FEITA - 23h45
-                    </p>
-                </div>
+                </p>
+            </div>
         </div>
-        
-        </div>
-        
-        <script src="script.js"></script>
-    </body>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>

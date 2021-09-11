@@ -1,11 +1,14 @@
 .black {
     margin: 0;
-    background: #070707;
+    background: #090909;
     }
     
 .white {
     margin: 0;
-    background: #ffffff;
+    background: #E3E3E3;
+}
+#tudo {
+    position: relative;
 }
     .black p2 {
         color: rgb(0, 255, 13);
@@ -30,6 +33,7 @@
         font-weight: bold;
     }
     .black #container-imagem {
+        top: 0;
         position: relative;
         height: 100vh;
         width: 100vw;

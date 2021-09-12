@@ -67,8 +67,10 @@ const getDia = function(){
    gato();
    white2();
        now = new Date;
-       var x = now.getDay();
-       var hora = now.getHours();
+       /*var x = now.getDay();
+       var hora = now.getHours();*/
+       var x = 5;
+       var hora = 14;
        var minuto = now.getMinutes();
        const ingles = 'https://meet.google.com/xdy-vzqw-mvm';
        const sociologia = 'https://meet.google.com/mfb-ozep-qtn?hs=224';
@@ -107,7 +109,7 @@ const getDia = function(){
            else if (entre(hora, minuto, 14, 09, 16, 11)){
                redirecionar(ingles, 'INGLÊS')
            } else if (entre(hora, minuto, 16, 11, 18, 01)){
-               redirecionar(dw)
+               redirecionar(dw, 'DES. WEB')
            } else if (comparahora(hora, minuto, '>=', 18, 01)){
                semaulamais()
            }
@@ -117,9 +119,9 @@ const getDia = function(){
                semaulaagora1('História', 13, 30, 'Matemática', 15, 30);
            }
            else if (entre(hora, minuto, 13, 19, 15, 16)){
-               redirecionar(historia)
+               redirecionar(historia, 'HISTÓRIA')
            } else if (entre(hora, minuto, 15, 15, 17, 21)){
-               redirecionar(matematica)
+               redirecionar(matematica, 'MATEMÁTICA')
            } else if (comparahora(hora, minuto, '>', 17, 20)){
                semaulamais()
            }
@@ -139,7 +141,7 @@ const getDia = function(){
                semaulaagora2('Matemática', 16, '00')
            }
             else if (entre(hora, minuto, 15, 50, 18, 01)){
-               redirecionar(matematica)
+               redirecionar(matematica, 'MATEMÁTICA')
            } else if (comparahora(hora, minuto, '>', 18, 00)){
                semaulamais()
            }
@@ -252,5 +254,4 @@ const hora = function(){
            document.getElementById('p2').innerHTML = d + ' - ' + hora + 'h' + minuto;
        }
    }
-   document.getElementsByTagName('p2')[0].innerHTML = materia2;
 }    

@@ -67,10 +67,8 @@ const getDia = function(){
    gato();
    white2();
        now = new Date;
-       /*var x = now.getDay();
-       var hora = now.getHours();*/
-       var x = 5;
-       var hora = 14;
+       var x = now.getDay();
+       var hora = now.getHours();
        var minuto = now.getMinutes();
        const ingles = 'https://meet.google.com/xdy-vzqw-mvm';
        const sociologia = 'https://meet.google.com/mfb-ozep-qtn?hs=224';

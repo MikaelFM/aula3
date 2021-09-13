@@ -1,6 +1,16 @@
 brilho = 1;
 link = '';
 materia2 = '';
+
+var el = document.getElementsByTagName('body')[0]
+if (localStorage.cor == 'white' || localStorage.cor == undefined){
+        document.getElementById('whiteimg').style.display = 'block';
+        document.getElementById('blackimg').style.display = 'none';
+    } else {
+        document.getElementById('whiteimg').style.display = 'none';
+        document.getElementById('blackimg').style.display = 'black';
+    }
+
 if (Object.keys(localStorage).length < 2){
     var n = 0;
     localStorage.setItem('n', n);

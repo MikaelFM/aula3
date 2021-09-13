@@ -24,10 +24,10 @@ function white (){
         el.classList.add('white');
         cache = 'white';
     } else {
+        document.getElementById('whiteimg').style.display = 'none';
+        document.getElementById('blackimg').style.display = 'block'
         el.classList.remove('white');
         el.classList.add('black');
-        document.getElementById('whiteimg').style.display = 'none';
-        document.getElementById('blackimg').style.display = 'block';
         cache = 'black';
     }
     brilho += 1

@@ -333,13 +333,17 @@
             height: 2.5px; 
         }
         .white .value {
-            font-size: 10px;
+            font-size: 9px;
         }
         .black .value {
-            font-size: 10px;
+            font-size: 9px;
         }
     }
     @media screen and (max-width: 505px){
+        .container .skill .percent {
+            margin-left: auto;
+            margin-right: auto;
+        }
         .black #p {
             font-size: 10px;
         }
@@ -377,10 +381,10 @@
             height: 2.5px; 
         }
         .black .value {
-            font-size: 9px;
+            display: none;
         }
         .white .value {
-            font-size: 9px;
+            display: none;
         }
     }
     @media screen and (max-width: 400px){
@@ -421,10 +425,10 @@
             height: 2.5px; 
         }
         .black .value {
-            font-size: 8px;
+            display: none;
         }
         .white .value {
-            font-size: 8px;
+            display: none;
         }
     }
     @media screen and (max-width: 305px){
@@ -465,12 +469,6 @@
         .container .skill .percent {
             height: 2.5px; 
         }
-        .black .value {
-            font-size: 6px;
-        }
-        .white .value {
-            font-size: 6px;
-        }
     }
     @media screen and (max-width: 205px){
         body {
@@ -509,12 +507,6 @@
        }
        .container .skill .percent {
            height: 2.5px; 
-       }
-       .white .value {
-           font-size: 6px;
-       }
-        .black .value {
-           font-size: 6px;
        }
    }
 

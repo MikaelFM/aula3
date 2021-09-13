@@ -73,8 +73,7 @@ const getDia = function(){
        var hora = 14;
        var minuto = now.getMinutes();
        const ingles = 'https://meet.google.com/xdy-vzqw-mvm';
-       /*const sociologia = 'https://meet.google.com/mfb-ozep-qtn?hs=224';*/
-        const sociologia = 'https://meet.google.com/kys-ceni-sbe'
+       const sociologia = 'https://meet.google.com/mfb-ozep-qtn?hs=224';
        const historia = 'https://meet.google.com/xks-fhea-rvo';
        const matematica = 'https://meet.google.com/xbn-tyzt-dtr';
        const dw = '';

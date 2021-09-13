@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .open {
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
 }
 .black {
     margin: 0;
@@ -24,7 +25,7 @@
         margin-left: auto;
         color: rgb(255, 255, 255);
         font-size: xx-large;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;;
         font-weight: bold;
     }
     .white #p {
@@ -32,7 +33,7 @@
         margin-left: auto;
         color: rgb(0, 0, 0);
         font-size: xx-large;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;;
         font-weight: bold;
     }
     .black #container-imagem {
@@ -67,7 +68,7 @@
         margin-left: auto;
         color: white;
         font-size: xx-large;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;;
         font-weight: bold;
     }
     .black #dia{
@@ -90,20 +91,20 @@
         text-align: center;
         color: rgb(255, 255, 255);
         font-size: 200%;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;;
         font-weight: bold;
         padding: 10px;
     }
     .black #pc {
         color: rgb(0, 255, 13);
         font-size: 200%;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;;
         position: relative;
     }
     .white #pc {
         color: #005713;
         font-size: 200%;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;;
         position: relative;
     }
     .container {
@@ -161,7 +162,7 @@
         bottom: 5px;
         color: rgb(0, 255, 13);
         font-size: 100%;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;;
         position: relative;
     }
     .white .value {
@@ -169,7 +170,7 @@
         bottom: 5px;
         color: #005713;
         font-size: 100%;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;;
         position: relative;
     }
     @keyframes animate {

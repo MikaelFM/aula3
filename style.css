@@ -374,7 +374,7 @@
             height: 2.5px; 
         }
         .value {
-            font-size: 10px;
+            font-size: 9px;
         }
     }
     @media screen and (max-width: 400px){
@@ -415,7 +415,7 @@
             height: 2.5px; 
         }
         .value {
-            font-size: 10px;
+            font-size: 8px;
         }
     }
     @media screen and (max-width: 305px){
@@ -457,7 +457,7 @@
             height: 2.5px; 
         }
         .value {
-            font-size: 10px;
+            font-size: 6px;
         }
     }
     @media screen and (max-width: 205px){
@@ -499,7 +499,7 @@
            height: 2.5px; 
        }
        .value {
-           font-size: 10px;
+           font-size: 6px;
        }
    }
 

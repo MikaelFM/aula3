@@ -197,6 +197,10 @@
             text-align: center;
             margin-left: auto;
         }
+        img {
+            width: 850px;
+            height: 289px;
+        }
     }
     @media screen and (max-width: 1217px){
         body {
@@ -209,6 +213,10 @@
         .white #p {
             text-align: center;
             margin-left: auto;
+        }
+        img {
+            width: 850px;
+            height: 289px;
         }
     }
     @media screen and (max-width: 1090px){
@@ -223,6 +231,10 @@
         }
         body {
             background-color: blue;
+        }
+        img {
+            width: 850px;
+            height: 289px;
         }
     }
     @media screen and (max-width: 993px){

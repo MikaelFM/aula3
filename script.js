@@ -20,10 +20,12 @@ if (parseInt(localStorage.n) % 2 == 0 ){
 function white (){
     var el = document.getElementsByTagName('body')[0]
     if ((brilho % 2 == 1)){
+        document.getElementById("img").src="IFV.png";
         el.classList.remove('black');
         el.classList.add('white');
         cache = 'white';
     } else {
+        document.getElementById("img").src="IF.png";
         el.classList.remove('white');
         el.classList.add('black');
         cache = 'black';
@@ -35,10 +37,12 @@ function white (){
 function white2 (){
     var el = document.getElementsByTagName('body')[0]
     if (localStorage.cor == 'white' || localStorage.cor == undefined){
+        document.getElementById("img").src="IFV.png";
         el.classList.remove('black');
         el.classList.add('white');
         cache = 'white';
     } else {
+        document.getElementById("img").src="IF.png";
         el.classList.remove('white');
         el.classList.add('black');
         cache = 'black';

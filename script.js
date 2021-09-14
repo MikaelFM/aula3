@@ -25,7 +25,7 @@ function white (){
         el.classList.add('white');
         cache = 'white';
     } else {
-        document.getElementById("img").src="IF.png";
+        document.getElementById("img").src="IF.jpg";
         el.classList.remove('white');
         el.classList.add('black');
         cache = 'black';
@@ -42,7 +42,7 @@ function white2 (){
         el.classList.add('white');
         cache = 'white';
     } else {
-        document.getElementById("img").src="IF.png";
+        document.getElementById("img").src="IF.jpg";
         el.classList.remove('white');
         el.classList.add('black');
         cache = 'black';

@@ -3,14 +3,6 @@ link = '';
 materia2 = '';
 
 var el = document.getElementsByTagName('body')[0]
-if (localStorage.cor == 'white' || localStorage.cor == undefined){
-        document.getElementById('whiteimg').style.display = 'block';
-        document.getElementById('blackimg').style.display = 'none';
-    } else {
-        document.getElementById('whiteimg').style.display = 'none';
-        document.getElementById('blackimg').style.display = 'black';
-    }
-
 if (Object.keys(localStorage).length < 2){
     var n = 0;
     localStorage.setItem('n', n);
@@ -28,14 +20,10 @@ if (parseInt(localStorage.n) % 2 == 0 ){
 function white (){
     var el = document.getElementsByTagName('body')[0]
     if ((brilho % 2 == 1)){
-        document.getElementById('whiteimg').style.display = 'block';
-        document.getElementById('blackimg').style.display = 'none';
         el.classList.remove('black');
         el.classList.add('white');
         cache = 'white';
     } else {
-        document.getElementById('whiteimg').style.display = 'none';
-        document.getElementById('blackimg').style.display = 'block'
         el.classList.remove('white');
         el.classList.add('black');
         cache = 'black';
@@ -47,14 +35,10 @@ function white (){
 function white2 (){
     var el = document.getElementsByTagName('body')[0]
     if (localStorage.cor == 'white' || localStorage.cor == undefined){
-        document.getElementById('whiteimg').style.display = 'block';
-        document.getElementById('blackimg').style.display = 'none';
         el.classList.remove('black');
         el.classList.add('white');
         cache = 'white';
     } else {
-        document.getElementById('whiteimg').style.display = 'none';
-        document.getElementById('blackimg').style.display = 'black';
         el.classList.remove('white');
         el.classList.add('black');
         cache = 'black';

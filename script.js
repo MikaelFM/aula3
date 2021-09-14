@@ -184,7 +184,7 @@ const semaulaagora1 = function(materia, h, m, materia2, h1, m1){
    document.getElementById('p').style.color = "rgb(0, 255, 13)";
    document.getElementById('p').innerHTML = '<p2></p2>';
    document.getElementsByTagName('p2')[0].innerHTML = "Ops... Não estamos tendo uma aula síncrona no momento <br><br>";
-   document.getElementById('p2').innerHTML =  '<p style="color: lime">PRÓXIMAS AULAS:</p><p>' + materia  + ' - ' +  h + 'h' + m + '<br>' + materia2  + ' - ' +  h1 + 'h' + m1 + '</p>';
+   document.getElementById('p2').innerHTML =  '<p class="cor">PRÓXIMAS AULAS:</p><p>' + materia  + ' - ' +  h + 'h' + m + '<br>' + materia2  + ' - ' +  h1 + 'h' + m1 + '</p>';
 }
 const semaulahoje = function(){
    hora();

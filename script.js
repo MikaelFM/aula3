@@ -134,8 +134,22 @@ const getDia = function(){
            }
        }
        else if(x == quinta){
-           d = 'QUINTA-FEIRA'
-           semaulahoje()
+           /*d = 'QUINTA-FEIRA'
+           semaulahoje()*/
+           if (comparahora(hora, minuto, '<', 13, 20)){
+               semaulaagora1('Química', 13, 30, 'Inglês', 16, '00');
+           }
+           else if (entre(hora, minuto, 13, 19, 15, 16)){
+               redirecionar(quimica, 'QUÍMICA')
+           }
+           else if (entre(hora, minuto, 15, 16, 15, 51)){
+               semaulaagora2('Inglês', 16, '00')
+           }
+            else if (entre(hora, minuto, 15, 50, 18, 01)){
+               redirecionar(ingles, 'INGLÊS')
+           } else if (comparahora(hora, minuto, '>', 18, 00)){
+               semaulamais()
+           }
        }
        else if(x == sexta){
              if (comparahora(hora, minuto, '<', 13, 20)){

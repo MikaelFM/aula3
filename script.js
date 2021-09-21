@@ -83,7 +83,7 @@ const getDia = function(){
        const sociologia = 'https://meet.google.com/mfb-ozep-qtn?hs=224';
        const historia = 'https://meet.google.com/xks-fhea-rvo';
        const matematica = 'https://meet.google.com/xbn-tyzt-dtr';
-       const dw = '';
+       const dw = 'http://meet.google.com/gdt-psmk-aps';
        const quimica = 'http://meet.google.com/fwb-yhjq-jbh';
        const domingo = 0;
        const segunda = 1;

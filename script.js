@@ -137,15 +137,15 @@ const getDia = function(){
            /*d = 'QUINTA-FEIRA'
            semaulahoje()*/
            if (comparahora(hora, minuto, '<', 15, 00)){
-               semaulaagora1('DW', 15, '10');
+               semaulaagora2('DW', 15, '10');
            }
            else if (entre(hora, minuto, 14, 59, 16, 10)){
                redirecionar(dw, 'Desen. Web')
            }
-           } else if (comparahora(hora, minuto, '>', 16, 10)){
+            else if (comparahora(hora, minuto, '>', 16, 10)){
                semaulamais()
            }
-       }
+           }
        else if(x == sexta){
              if (comparahora(hora, minuto, '<', 13, 20)){
                semaulaagora1('Sociologia', 13, 30, 'Matemática', 16, '00');

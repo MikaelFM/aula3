@@ -110,8 +110,8 @@ const getDia = function(){
        }
        else if(x == terca){
            d = 'TERÇA-FEIRA';
-            if (comparahora(hora, minuto, '<', 14, 10)){
-               semaulaagora1('Inglês', 14, 20, 'Des. Web', 16, 20);
+            if (comparahora(hora, minuto, '<', 13, 50)){
+               semaulaagora1('Inglês', 14, 00, 'Des. Web', 16, 20);
            }
            else if (entre(hora, minuto, 14, 09, 16, 11)){
                redirecionar(ingles, 'INGLÊS')
@@ -136,18 +136,13 @@ const getDia = function(){
        else if(x == quinta){
            /*d = 'QUINTA-FEIRA'
            semaulahoje()*/
-           if (comparahora(hora, minuto, '<', 13, 20)){
-               semaulaagora1('Química', 13, 30, 'Inglês', 16, '00');
+           if (comparahora(hora, minuto, '<', 15, 00)){
+               semaulaagora1('DW', 15, '10');
            }
-           else if (entre(hora, minuto, 13, 19, 15, 16)){
-               redirecionar(quimica, 'QUÍMICA')
+           else if (entre(hora, minuto, 14, 59, 16, 10)){
+               redirecionar(dw, 'Desen. Web')
            }
-           else if (entre(hora, minuto, 15, 16, 15, 51)){
-               semaulaagora2('Inglês', 16, '00')
-           }
-            else if (entre(hora, minuto, 15, 50, 18, 01)){
-               redirecionar(ingles, 'INGLÊS')
-           } else if (comparahora(hora, minuto, '>', 18, 00)){
+           } else if (comparahora(hora, minuto, '>', 16, 10)){
                semaulamais()
            }
        }

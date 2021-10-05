@@ -115,7 +115,7 @@ const getDia = function(){
             if (comparahora(hora, minuto, '<', 13, 50)){
                semaulaagora1('Inglês', 14, 00, 'Des. Web', 16, 20);
            }
-           else if (entre(hora, minuto, 14, 09, 16, 11)){
+           else if (entre(hora, minuto, 13, 50, 16, 11)){
                redirecionar(ingles, 'INGLÊS')
            } else if (entre(hora, minuto, 16, 11, 18, 01)){
                redirecionar(dw, 'DES. WEB')

@@ -138,13 +138,13 @@ const getDia = function(){
        else if(x == quinta){
            /*d = 'QUINTA-FEIRA'
            semaulahoje()*/
-           if (comparahora(hora, minuto, '<', 15, 20)){
-               semaulaagora2('Des. Web', 15, '30');
+           if (comparahora(hora, minuto, '<', 15, 00)){
+               semaulaagora2('Des. Web', 15, '10');
            }
-           else if (entre(hora, minuto, 15, 20, 17, 20)){
+           else if (entre(hora, minuto, 15, 00, 18, 80)){
                redirecionar(dw, 'DES. WEB')
            }
-            else if (comparahora(hora, minuto, '>', 17, 20)){
+            else if (comparahora(hora, minuto, '>', 18, 20)){
                semaulamais()
            }
            }

@@ -113,7 +113,7 @@ const getDia = function(){
        else if(x == terca){
            d = 'TERÇA-FEIRA';
             if (comparahora(hora, minuto, '<', 13, 50)){
-               semaulaagora1('Inglês', 14, 00, 'Des. Web', 16, 20);
+               semaulaagora1('Inglês', 14, '00', 'Des. Web', 16, 20);
            }
            else if (entre(hora, minuto, 13, 50, 16, 11)){
                redirecionar(ingles, 'INGLÊS')
@@ -138,13 +138,13 @@ const getDia = function(){
        else if(x == quinta){
            /*d = 'QUINTA-FEIRA'
            semaulahoje()*/
-           if (comparahora(hora, minuto, '<', 13, 20)){
-               semaulaagora2('Inglês', 13, '30');
+           if (comparahora(hora, minuto, '<', 15, 20)){
+               semaulaagora2('Des. Web', 15, '30');
            }
-           else if (entre(hora, minuto, 13, 20, 15, 20)){
-               redirecionar(ingles, 'INGLÊS')
+           else if (entre(hora, minuto, 15, 20, 17, 20)){
+               redirecionar(dw, 'DES. WEB')
            }
-            else if (comparahora(hora, minuto, '>', 15, 20)){
+            else if (comparahora(hora, minuto, '>', 17, 20)){
                semaulamais()
            }
            }

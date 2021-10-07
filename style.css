@@ -275,7 +275,7 @@
         }
     }
     @media screen and (max-width: 850px){
-        #container-imagem {
+        .black #container-imagem {
             background: url('brilho+.png');
         }
          body {

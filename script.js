@@ -82,7 +82,7 @@ const getDia = function(){
        var hora = 14;*/
        var minuto = now.getMinutes();
        const ingles = 'https://meet.google.com/xdy-vzqw-mvm';
-       const sociologia = 'https://meet.google.com/mfb-ozep-qtn?hs=224';
+       const sociologia = 'https://meet.google.com/mfb-ozep-qtn';
        const historia = 'https://meet.google.com/xks-fhea-rvo';
        const matematica = 'https://meet.google.com/xbn-tyzt-dtr';
        const dw = 'http://meet.google.com/gdt-psmk-aps';
@@ -113,12 +113,12 @@ const getDia = function(){
        else if(x == terca){
            d = 'TERÇA-FEIRA';
             if (comparahora(hora, minuto, '<', 13, 50)){
-               semaulaagora1('Inglês', 14, '00', 'Des. Web', 16, 20);
+               semaulaagora1('Inglês', 14, '00', 'Sociologia', 16, 20);
            }
            else if (entre(hora, minuto, 13, 50, 16, 11)){
                redirecionar(ingles, 'INGLÊS')
            } else if (entre(hora, minuto, 16, 11, 18, 01)){
-               redirecionar(dw, 'DES. WEB')
+               redirecionar(sociologia, 'SOCIOLOGIA')
            } else if (comparahora(hora, minuto, '>=', 18, 01)){
                semaulamais()
            }

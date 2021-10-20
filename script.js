@@ -125,16 +125,12 @@ const getDia = function(){
        }
        else if(x == quarta){
            if (comparahora(hora, minuto, '<', 13, 20)){
-               semaulaagora1('História', 13, 30, 'Inglês', 17, '00');
+               semaulaagora2('Des. Web', 15, 30);
            }
-           else if (entre(hora, minuto, 13, 19, 15, 16)){
-               redirecionar(historia, 'HISTÓRIA')
-           } else if (entre(hora, minuto, 16, 50, 18, 05)){
-               redirecionar(ingles, 'INGLÊS')
-           } else if (comparahora(hora, minuto, '>', 18, 05)){
+            else if (entre(hora, minuto, 15, 20, 17, 05)){
+               redirecionar(dw, 'DES. WEB')
+           } else if (comparahora(hora, minuto, '>', 17, 05)){
                semaulamais()
-           } else {
-               semaulaagora2('Inglês', 17, '00')
            }
        }
        else if(x == quinta){

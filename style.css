@@ -49,7 +49,7 @@
         height: 100vh;
         width: 100vw;
         background: url('background1.png');
-        background-size:auto;
+        background-size: cover;
         overflow: hidden
     }
     .white #container-imagem {

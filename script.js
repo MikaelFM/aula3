@@ -174,7 +174,7 @@ const semaulaagora2 = function(materia, h, m){
    document.getElementById('p').style.color = "rgb(0, 255, 13)";
    document.getElementById('p').innerHTML = '<p2></p2>';
    document.getElementsByTagName('p2')[0].innerHTML = "Ops... Não estamos tendo uma aula síncrona no momento <br><br>";
-   document.getElementById('p2').innerHTML =   '<p class="cor">PRÓXIMAS AULAS:</p><p>' + materia  + ' - ' +  h + 'h' + m + ' (APP EM MANUTENÇÃO) </p>';
+   document.getElementById('p2').innerHTML =   '<p class="cor">PRÓXIMAS AULAS:</p><p>' + materia  + ' - ' +  h + 'h' + m + '</p>';
 }
 const semaulaagora1 = function(materia, h, m, materia2, h1, m1){
    document.getElementsByClassName('skill')[0].style.display = 'none';

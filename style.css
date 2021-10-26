@@ -277,6 +277,7 @@
     @media screen and (max-width: 850px){
         .black #container-imagem {
             background: url('brilho+.png');
+            background-size: cover;
         }
          body {
             background-color: white;

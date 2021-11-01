@@ -101,14 +101,7 @@ const getDia = function(){
        } 
        else if(x == segunda){
            d = 'SEGUNDA-FEIRA';
-           if (comparahora(hora, minuto, '<=', 14, 09)){
-               semaulaagora2('Química', 14, 20);
-           }
-           else if (entre(hora, minuto, 14, 09, 16, 11)){
-               redirecionar(quimica, 'QUÍMICA')
-           } else if (comparahora(hora, minuto, '>=', 16, 11)){
-               semaulamais()
-           }
+           semaulahoje()
        }
        else if(x == terca){
            d = 'TERÇA-FEIRA';

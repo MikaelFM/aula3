@@ -118,14 +118,14 @@ const getDia = function(){
        }
        else if(x == quarta){
              if (comparahora(hora, minuto, '<', 13, 20)){
-               semaulaagora1('História', 13, 30, 'Des. Web', 15, '10');
+               semaulaagora1('História', 13, 30, Química', 14, '20');
            }
-           else if (entre(hora, minuto, 13, 19, 15, 00)){
+           else if (entre(hora, minuto, 13, 19, 14, 10)){
                redirecionar(historia, 'HISTÓRIA')
            }
-            else if (entre(hora, minuto, 15, 00, 18, 01)){
-               redirecionar(dw, 'DES. WEB')
-           } else if (comparahora(hora, minuto, '>', 18, 01)){
+            else if (entre(hora, minuto, 14, 10, 16, 30)){
+               redirecionar(quimica, 'Química')
+           } else if (comparahora(hora, minuto, '>', 16, 30)){
                semaulamais()
            }
        }

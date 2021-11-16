@@ -1,4 +1,4 @@
-//V.2
+//V.4
 aulaarray = {}
 brilho = 1;
 link = '#';

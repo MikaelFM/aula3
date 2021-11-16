@@ -42,7 +42,7 @@ function white (){
     }
     brilho += 1
     console.log(brilho)
-    localStorage.setItem('cor>', cache);
+    localStorage.setItem('cor', cache);
 }
 function white2 (){
     var el = document.getElementsByTagName('body')[0]

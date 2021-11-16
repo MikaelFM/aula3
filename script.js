@@ -1,10 +1,18 @@
 //V.2
-
+aulaarray = {}
 brilho = 1;
-link = '';
+link = '#';
 materia2 = '';
-
+var now = new Date();
+var dia =  now.getDay()
+var hora1 = now.getHours();
+var minuto = now.getMinutes()
+var day = ['DOMINGO', 'SEGUNDA-FEIRA', 'TERÇA-FEIRA', 'QUARTA-FEIRA', 'QUINTA-FEIRA', 'SEXTA-FEIRA', 'SÁBADO']
+var d = day[dia]
+console.log(d)
 var el = document.getElementsByTagName('body')[0]
+
+
 if (Object.keys(localStorage).length < 2){
     var n = 0;
     localStorage.setItem('n', n);
@@ -34,7 +42,7 @@ function white (){
     }
     brilho += 1
     console.log(brilho)
-    localStorage.setItem('cor', cache);
+    localStorage.setItem('cor>', cache);
 }
 function white2 (){
     var el = document.getElementsByTagName('body')[0]
@@ -52,9 +60,57 @@ function white2 (){
     brilho += 1
     localStorage.setItem('cor', cache);
 }
+function isKeyExists(obj,key){
+    return key in obj;
+}
 
-
-
+const aulas = function(agora, array){
+    tamanho = Object.keys(aulaarray).length;
+    if (isKeyExists(aulaarray, 'aula1')){
+        horainicio1 = array['aula1']['horainicio']
+    }
+    if (isKeyExists(aulaarray, 'aula2')){
+        horainicio2 = array['aula2']['horainicio']
+    }
+    for (let key in array) {
+        formataHora(array[key])
+    }
+    if (tamanho == 0){
+        if (entre(agora, sethora('13:35').toString() ,sethora('18:00').toString())){
+            presencial()
+        } else if (agora > sethora('18:00').toString()){
+            semaulamais()
+        } else if (agora < sethora('13:30').toString()){
+            semaulaagora1('Aula Presencial', '13:30')
+        }
+    }
+    if (tamanho == 1){
+        aula1 = array['aula1']
+        if (entre(agora, aula1['horainicio'], aula1['horafim'])){
+            redirecionar(aula1['link'], aula1['nome'])
+        }  else if (agora.toString() > aula1['horafim']){
+            console.log(agora.toString(), aula1['horafim'])
+            semaulamais()
+        }  else if (agora.toString() < aula1['horainicio']){
+            semaulaagora1(aula1['nome'], horainicio1)
+        }
+    }
+    else if (tamanho == 2){
+        aula1 = array['aula1']
+        aula2 = array['aula2']
+        if(entre(agora, aula1['horainicio'], aula1['horafim'])){
+            redirecionar(aula1['link'], aula1['nome'])
+        } else if(entre(agora, aula2['horainicio'], aula2['horafim'])){
+            redirecionar(aula2['link'], aula2['nome'])
+        } else if (entre(agora, aula1['horafim'], aula2['horainicio'])) {
+            semaulaagora1(aula2['nome'], horainicio2)
+        } else if (agora.toString() > aula2['horafim']){
+            semaulamais()
+        }  else if (agora.toString() < aula1['horainicio']){
+            semaulaagora1(aula1['nome'], horainicio1, aula2['nome'], horainicio2)
+        }
+    }
+}     
 function sleep(milliseconds){
    var start = new Date().getTime();
    var end=0;
@@ -75,195 +131,116 @@ const gato = function(){if (c <= 100){
 const getDia = function(){
    gato();
    white2();
-       now = new Date;
-       var x = now.getDay();
-       var hora = now.getHours();
-       /*var x = 5;
-       var hora = 14;*/
-       var minuto = now.getMinutes();
-       const ingles = 'https://meet.google.com/xdy-vzqw-mvm';
-       const sociologia = 'https://meet.google.com/nvd-nfsu-den';
-       const historia = 'https://meet.google.com/xks-fhea-rvo';
-       const matematica = 'https://meet.google.com/xbn-tyzt-dtr';
-       const dw = 'https://meet.google.com/gdt-psmk-aps';
-       const quimica = 'http://meet.google.com/fwb-yhjq-jbh';
-       const domingo = 0;
-       const segunda = 1;
-       const terca = 2;
-       const quarta = 3;
-       const quinta = 4;
-       const sexta = 5;
-       const sabado = 6;
+    const ingles = 'https://meet.google.com/xdy-vzqw-mvm';
+    const sociologia = 'https://meet.google.com/nvd-nfsu-den';
+    const historia = 'https://meet.google.com/xks-fhea-rvo';
+    const matematica = 'https://meet.google.com/xbn-tyzt-dtr';
+    const dw = 'https://meet.google.com/gdt-psmk-aps';
+    const quimica = 'http://meet.google.com/fwb-yhjq-jbh';
+    const ef = 'https://meet.google.com/bbu-cxrw-obg';
 
-   if (x == domingo){
-       d = 'DOMINGO';
+   if (d == 'DOMINGO'){
        semaulahoje()
        } 
-       else if(x == segunda){
-           d = 'SEGUNDA-FEIRA';
-           semaulahoje()
+       else if(d == 'SEGUNDA-FEIRA'){
+           aulaarray = {'aula1': {'link': ef, 'nome': 'ED. FÍSICA', 'horainicio': '13:30', 'horafim': '15:10'}}
+           aulas(now.toString(), aulaarray)
        }
-       else if(x == terca){
-           d = 'TERÇA-FEIRA';
-            if (comparahora(hora, minuto, '<', 13, 50)){
-               semaulaagora1('Inglês', 14, '00', 'Sociologia', 16, 20);
-           }
-           else if (entre(hora, minuto, 13, 50, 16, 11)){
-               redirecionar(ingles, 'INGLÊS')
-           } else if (entre(hora, minuto, 16, 11, 18, 01)){
-               redirecionar(sociologia, 'SOCIOLOGIA')
-           } else if (comparahora(hora, minuto, '>=', 18, 01)){
-               semaulamais()
-           }
+       else if(d == 'TERÇA-FEIRA'){
+           aulaarray = {'aula1': {'link': ef, 'nome': 'ED. FÍSICA', 'horainicio': '13:30', 'horafim': '15:10'}}
+           aulas(now.toString(), aulaarray)
        }
-       else if(x == quarta){
-             if (comparahora(hora, minuto, '<', 13, 20)){
-               semaulaagora1('História', 13, 30, Química', 14, '20');
-           }
-           else if (entre(hora, minuto, 13, 19, 14, 10)){
-               redirecionar(historia, 'HISTÓRIA')
-           }
-            else if (entre(hora, minuto, 14, 10, 16, 30)){
-               redirecionar(quimica, 'Química')
-           } else if (comparahora(hora, minuto, '>', 16, 30)){
-               semaulamais()
-           }
+       else if(d == 'QUARTA-FEIRA'){
+            aulaarray = {}
+           aulas(now.toString(), aulaarray)
        }
-       else if(x == quinta){
-           /*d = 'QUINTA-FEIRA'
-           semaulahoje()*/
-           if (comparahora(hora, minuto, '<', 15, 00)){
-               semaulaagora2('Des. Web', 15, '10');
-           }
-           else if (entre(hora, minuto, 15, 00, 18, 80)){
-               redirecionar(dw, 'DES. WEB')
-           }
-            else if (comparahora(hora, minuto, '>', 18, 20)){
-               semaulamais()
-           }
-           }
-       else if(x == sexta){
-             if (comparahora(hora, minuto, '<', 13, 20)){
-               semaulaagora1('Sociologia', 13, 30, 'Matemática', 16, '00');
-           }
-           else if (entre(hora, minuto, 13, 19, 15, 16)){
-               redirecionar(sociologia, 'SOCIOLOGIA')
-           }
-           else if (entre(hora, minuto, 15, 16, 15, 51)){
-               semaulaagora2('Matemática', 16, '00')
-           }
-            else if (entre(hora, minuto, 15, 50, 18, 01)){
-               redirecionar(matematica, 'MATEMÁTICA')
-           } else if (comparahora(hora, minuto, '>', 18, 00)){
-               semaulamais()
-           }
+       else if(d == 'QUINTA-FEIRA'){
+        aulaarray = {}
+        aulas(now.toString(), aulaarray)
+        }
+       else if(d == 'SEXTA-FEIRA'){
+        aulaarray = {}
+        aulas(now.toString(), aulaarray)
        }
-       else if(x == sabado){
-            d = 'SÁBADO'
+       else if(d == 'SÁBADO'){
             semaulahoje()
        }
+}
+         
+const sethora = function(hours){
+    x = new Date()
+    hours = hours.toString()
+    result = hours.split(":");
+    x.setHours(result[0], result[1], 0, 0)
+    return x
+}
 
-       
+const faz = function(txt1, txt2){
+    document.getElementsByClassName('skill')[0].style.display = 'none';
+    document.getElementById('p').style.color = "rgb(0, 255, 13)";
+    document.getElementById('p').innerHTML = '<p2></p2>';
+    document.getElementsByTagName('p2')[0].innerHTML = txt1
+   if (txt2 != 'none'){
+        document.getElementById('p2').innerHTML =  txt2;
+   }
 }
-const semaulaagora2 = function(materia, h, m){
-   document.getElementsByClassName('skill')[0].style.display = 'none';
-   document.getElementById('p').style.color = "rgb(0, 255, 13)";
-   document.getElementById('p').innerHTML = '<p2></p2>';
-   document.getElementsByTagName('p2')[0].innerHTML = "Ops... Não estamos tendo uma aula síncrona no momento <br><br>";
-   document.getElementById('p2').innerHTML =   '<p class="cor">PRÓXIMAS AULAS:</p><p>' + materia  + ' - ' +  h + 'h' + m + '</p>';
-}
-const semaulaagora1 = function(materia, h, m, materia2, h1, m1){
-   document.getElementsByClassName('skill')[0].style.display = 'none';
-   document.getElementById('p').style.color = "rgb(0, 255, 13)";
-   document.getElementById('p').innerHTML = '<p2></p2>';
-   document.getElementsByTagName('p2')[0].innerHTML = "Ops... Não estamos tendo uma aula síncrona no momento<br><br>";
-   document.getElementById('p2').innerHTML =  '<p class="cor">PRÓXIMAS AULAS:</p><p>' + materia  + ' - ' +  h + 'h' + m + '<br>' + materia2  + ' - ' +  h1 + 'h' + m1 + '</p>';
-}
-const semaulahoje = function(){
-   hora();
-   document.getElementsByClassName('skill')[0].style.display = 'none';
-   document.getElementById('p').style.color = "rgb(0, 255, 13)";
-   document.getElementById('p').innerHTML = '<p2></p2>'
-   document.getElementsByTagName('p2')[0].innerHTML = "Ops... Não temos aula síncrona hoje. Tenha um bom descanso! <br><br>";
-}
-const semaulamais = function(){
-   hora();
-   document.getElementsByClassName('skill')[0].style.display = 'none';
-   document.getElementById('p').style.color = "rgb(0, 255, 13)";
-   document.getElementById('p').innerHTML = '<p2></p2>'
-   document.getElementsByTagName('p2')[0].innerHTML = "Ops... Não temos mais aula síncrona hoje. Aproveite! <br><br>";
-}
+
 const redirecionar = function(materia, materia2){
    document.getElementsByTagName('p2')[0].innerHTML = materia2;
    link = materia;
    hora();
 }
-const comparahora = function(h, m, sinal, h1, m1){
-   if (sinal == ">"){
-       if (h > h1 || (h == h1 && m > m1)){
-           return true;
-       } else {
-           return false;
-       }
-   }
-   else if (sinal == "<"){
-       if (h < h1 || (h == h1 && m < m1)){
-           return true;
-       } else {
-           return false;
-       }
-   }
-   else if (sinal == "=="){
-       if (h == h1 && m == m1){
-           return true
-       } else {
-           return false
-       }
-   }
-   else if (sinal == ">="){
-       if (comparahora(h, m, '>', h1, m1) || comparahora(h, m, '==', h1, m1)){
-           return true;
-       }
-       else {
-           return false;
-       }
-   }
-   else if (sinal == "<="){
-       if (comparahora(h, m, '<', h1, m1) || comparahora(h, m, '==', h1, m1)){
-           return true;
-       }
-       else {
-           return false;
-       }
-   }
-   
-}
-const entre = function(h, m, h1, m1, h2, m2){
-   if (comparahora(h, m, '>', h1, m1) && comparahora(h, m, '<', h2, m2)){
-       return true;
-   }
-   else {
-       return false;
-   }
-}
-const hora = function(){
-    var dia =  now.getDay()
-   var hora = now.getHours();
-   var minuto = now.getMinutes()
-   var day = ['DOMINGO', 'SEGUNDA-FEIRA', 'TERÇA-FEIRA', 'QUARTA-FEIRA', 'QUINTA-FEIRA', 'SEXTA-FEIRA', 'SÁBADO']
-   var d = day[dia]
 
-   if (minuto < 10){
-       if (hora < 10){
-           document.getElementById('p2').innerHTML = d + ' - 0' + hora + 'h0' + minuto;
-       } else {
-           document.getElementById('p2').innerHTML = d + ' - ' + hora + 'h0' + minuto;
-       }
+const entre = function(date, h1, h2){
+   date1 = h1.toString()
+   date2 = h2.toString()
+   if (date1 <= date.toString() && date.toString() <= date2){
+       return true
    } else {
-       if (hora < 10){
-           document.getElementById('p2').innerHTML = d + ' - 0' + hora + 'h' + minuto;
-       } else {
-           document.getElementById('p2').innerHTML = d + ' - ' + hora + 'h' + minuto;
-       }
+       return false
    }
-}    
+}
+
+const formataHora = function(item){
+   var x = sethora(item['horainicio']);
+   x.setMinutes(x.getMinutes() - 10)
+   item['horainicio'] = x.toString()
+   var y = sethora(item['horafim']);
+   y.setMinutes(y.getMinutes() + 10)
+   item['horafim'] = y.toString()
+ }
+
+
+const hora = function(){
+    document.getElementById('p2').innerHTML = d + ' - ' + ("0000" + hora1).slice(-2) + 'h' + ("0000" + minuto).slice(-2);
+}
+
+const semaulaagora1 = function(materia, horario1, materia2, horario2){
+    resultado1 = horario1.split(":");
+    h = resultado1[0];
+    m = resultado1[1];
+    if(horario2 != undefined){
+        resultado2 = horario2.split(":");
+        h1 = resultado2[0];
+        m1 = resultado2[1];
+    }
+    x.setHours(result[0], result[1], 0, 0)
+    if (materia2 != undefined){
+    faz("Ops... Não estamos tendo uma aula síncrona no momento<br><br>", '<p class="cor">PRÓXIMAS AULAS:</p><p>' + materia  + ' - ' +  h + 'h' + m + '<br>' + materia2  + ' - ' +  h1 + 'h' + m1 + '</p>')
+    } else {
+        faz("Ops... Não estamos tendo uma aula síncrona no momento <br><br>", '<p class="cor">PRÓXIMAS AULAS:</p><p>' + materia  + ' - ' +  h + 'h' + m + '</p>')
+    }
+}
+
+const semaulahoje = function(){
+   hora();
+   faz("Ops... Não temos aula síncrona hoje. Tenha um bom descanso! <br><br>", 'none')
+}
+const semaulamais = function(){
+   hora();
+   faz("Ops... Não temos mais aula síncrona hoje. Aproveite! <br><br>", 'none')
+}
+const presencial = function(){
+    hora();
+    faz("Estamos em aula presencial no momento. Boa Aula! <br><br>", 'none')
+ }

@@ -138,6 +138,7 @@ const getDia = function(){
     const dw = 'https://meet.google.com/gdt-psmk-aps';
     const quimica = 'http://meet.google.com/fwb-yhjq-jbh';
     const ef = 'https://meet.google.com/bbu-cxrw-obg';
+    const lit = 'meet.google.com/eme-aawe-fsx'
 
    if (d == 'DOMINGO'){
        semaulahoje()
@@ -147,7 +148,7 @@ const getDia = function(){
            aulas(now.toString(), aulaarray)
        }
        else if(d == 'TERÇA-FEIRA'){
-           aulaarray = {'aula1': {'link': ef, 'nome': 'ED. FÍSICA', 'horainicio': '13:30', 'horafim': '15:10'}}
+           aulaarray = {'aula1': {'link': lit, 'nome': 'LITERATURA', 'horainicio': '13:30', 'horafim': '15:10'}}
            aulas(now.toString(), aulaarray)
        }
        else if(d == 'QUARTA-FEIRA'){

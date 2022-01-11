@@ -138,7 +138,7 @@ const getDia = function(){
     const dw = 'https://meet.google.com/gdt-psmk-aps';
     const quimica = 'http://meet.google.com/fwb-yhjq-jbh';
     const ef = 'https://meet.google.com/bbu-cxrw-obg';
-    const lit = 'meet.google.com/eme-aawe-fsx'
+    const lit = 'https://meet.google.com/eme-aawe-fsx'
 
    if (d == 'DOMINGO'){
        semaulahoje()
